@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for habit_id start -->
-    <input type="text" id="habit_id" name="habit_id" class="form-control">
+    <%= select_tag(:habit_id, options_from_collection_for_select(Habit.all, :id, :habit_name, @completion.habit_id), :class => "form-control") %>
     <!-- Input for habit_id end -->
   </div>
   <!-- Label and input for habit_id end -->
