@@ -6,6 +6,7 @@ class HabitsController < ApplicationController
   end
 
   def show
+    @completion = Completion.new
     @habit = Habit.find(params.fetch("id_to_display"))
 
     render("habit_templates/show.html.erb")

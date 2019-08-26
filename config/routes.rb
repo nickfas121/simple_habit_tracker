@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/completions/new", { :controller => "completions", :action => "new_form" })
   post("/create_completion", { :controller => "completions", :action => "create_row" })
+  post("/create_completion_from_habit", { :controller => "completions", :action => "create_row_from_habit" })
 
   # READ
   get("/completions", { :controller => "completions", :action => "index" })

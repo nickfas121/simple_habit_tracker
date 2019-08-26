@@ -32,6 +32,21 @@ class CompletionsController < ApplicationController
     end
   end
 
+  def create_row_from_habit
+    @completion = Completion.new
+
+    @completion.habit_id = params.fetch("habit_id")
+    @completion.user_id = params.fetch("user_id")
+
+    if @completion.valid?
+      @completion.save
+
+      redirect_to("/habits/#{@completion.habit_id}", notice: "Completion created successfully.")
+    else
+      render("completion_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @completion = Completion.find(params.fetch("prefill_with_id"))
 
