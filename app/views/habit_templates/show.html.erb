@@ -13,17 +13,21 @@
 
       <!-- Edit link habit start -->
       <div class="col">
-        <a href="/habits/<%= @habit.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit habit
-        </a>
+        <% if current_user == @habit.user %>
+          <a href="/habits/<%= @habit.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit habit
+          </a>
+        <% end %>
       </div>
       <!-- Edit link habit end -->
 
       <!-- Delete link habit start -->
       <div class="col">
-        <a href="/delete_habit/<%= @habit.id %>" class="btn btn-block btn-outline-secondary">
-          Delete habit
-        </a>
+        <% if current_user == @habit.user %>
+          <a href="/delete_habit/<%= @habit.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete habit
+          </a>
+        <% end %>
       </div>
       <!-- Delete link habit end -->
     </div>
