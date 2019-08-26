@@ -44,7 +44,7 @@ class HabitsController < ApplicationController
     @habit = Habit.find(params.fetch("id_to_modify"))
 
     @habit.habit_name = params.fetch("habit_name")
-    @habit.user_id = params.fetch("user_id")
+    
     @habit.actively_tracking = params.fetch("actively_tracking")
 
     if @habit.valid?
