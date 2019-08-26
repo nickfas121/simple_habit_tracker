@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_completion/:id_to_remove", { :controller => "completions", :action => "destroy_row" })
+  get("/delete_completion_from_habit/:id_to_remove", { :controller => "completions", :action => "destroy_row_from_habit" })
+  get("/delete_completion_from_user/:id_to_remove", { :controller => "completions", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_habit/:id_to_remove", { :controller => "habits", :action => "destroy_row" })
+  get("/delete_habit_from_user/:id_to_remove", { :controller => "habits", :action => "destroy_row_from_user" })
 
   #------------------------------
 

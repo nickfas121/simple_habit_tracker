@@ -55,6 +55,14 @@ class HabitsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @habit = Habit.find(params.fetch("id_to_remove"))
+
+    @habit.destroy
+
+    redirect_to("/users/#{@habit.user_id}", notice: "Habit deleted successfully.")
+  end
+
   def destroy_row
     @habit = Habit.find(params.fetch("id_to_remove"))
 

@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Completions
+
+    <a data-toggle="collapse" href="#user_completions_new_form">
+      Add completion
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.completions.each do |completion| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/completions/<%= completion.id %>">
+          <%= completion.habit_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

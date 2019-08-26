@@ -53,6 +53,22 @@ class CompletionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @completion = Completion.find(params.fetch("id_to_remove"))
+
+    @completion.destroy
+
+    redirect_to("/users/#{@completion.user_id}", notice: "Completion deleted successfully.")
+  end
+
+  def destroy_row_from_habit
+    @completion = Completion.find(params.fetch("id_to_remove"))
+
+    @completion.destroy
+
+    redirect_to("/habits/#{@completion.habit_id}", notice: "Completion deleted successfully.")
+  end
+
   def destroy_row
     @completion = Completion.find(params.fetch("id_to_remove"))
 
