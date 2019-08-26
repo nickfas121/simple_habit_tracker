@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link completion start -->
       <div class="col">
         <a href="/completions/<%= @completion.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit completion
         </a>
       </div>
-      <!-- Edit link completion end -->
 
-      <!-- Delete link completion start -->
       <div class="col">
         <a href="/delete_completion/<%= @completion.id %>" class="btn btn-block btn-outline-secondary">
           Delete completion
         </a>
       </div>
-      <!-- Delete link completion end -->
     </div>
 
     <dl>
       <dt>
         Habit
       </dt>
-      <!-- Display habit_id start -->
       <dd>
         <% if @completion.habit.present? %>
           <a href="/habits/<%= @completion.habit_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display habit_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @completion.user.present? %>
           <a href="/users/<%= @completion.user_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@completion.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@completion.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

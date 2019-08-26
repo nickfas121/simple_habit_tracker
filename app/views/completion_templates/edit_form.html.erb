@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form completion start -->
 <form action="/update_completion/<%= @completion.id %>" method="post">
-<!-- Form completion end -->
 
-  <!-- Label and input for habit_id start -->
   <div class="form-group">
     <label for="habit_id">
       Habit
     </label>
 
-    <!-- Input for habit_id start -->
     <%= select_tag(:habit_id, options_from_collection_for_select(Habit.all, :id, :habit_name, @completion.habit_id), :class => "form-control") %>
-    <!-- Input for habit_id end -->
   </div>
-  <!-- Label and input for habit_id end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :created_at, @completion.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update completion
