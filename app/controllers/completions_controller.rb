@@ -1,6 +1,6 @@
 class CompletionsController < ApplicationController
   def index
-    @completions = Completion.all
+    @completions = Completion.page(params[:page]).per(10)
 
     render("completion_templates/index.html.erb")
   end

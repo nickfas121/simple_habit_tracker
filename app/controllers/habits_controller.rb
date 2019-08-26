@@ -10,7 +10,7 @@ class HabitsController < ApplicationController
   end
 
   def index
-    @habits = Habit.all
+    @habits = Habit.page(params[:page]).per(10)
 
     render("habit_templates/index.html.erb")
   end
