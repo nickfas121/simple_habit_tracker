@@ -1,0 +1,44 @@
+<h1>
+  Edit completion #<%= @completion.id %>
+</h1>
+
+<hr>
+
+<!-- Form completion start -->
+<form action="/update_completion/<%= @completion.id %>" method="post">
+<!-- Form completion end -->
+
+  <!-- Label and input for habit_id start -->
+  <div class="form-group">
+    <label for="habit_id">
+      Habit
+    </label>
+
+    <!-- Input for habit_id start -->
+    <input type="text" id="habit_id" name="habit_id" class="form-control" value="<%= @completion.habit_id %>">
+    <!-- Input for habit_id end -->
+  </div>
+  <!-- Label and input for habit_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @completion.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update completion
+  </button>
+</form>
+
+<hr>
+
+<a href="/completions">
+  Go back
+</a>

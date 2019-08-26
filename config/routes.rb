@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Completion resource:
+
+  # CREATE
+  get("/completions/new", { :controller => "completions", :action => "new_form" })
+  post("/create_completion", { :controller => "completions", :action => "create_row" })
+
+  # READ
+  get("/completions", { :controller => "completions", :action => "index" })
+  get("/completions/:id_to_display", { :controller => "completions", :action => "show" })
+
+  # UPDATE
+  get("/completions/:prefill_with_id/edit", { :controller => "completions", :action => "edit_form" })
+  post("/update_completion/:id_to_modify", { :controller => "completions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_completion/:id_to_remove", { :controller => "completions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Habit resource:
 
   # CREATE
