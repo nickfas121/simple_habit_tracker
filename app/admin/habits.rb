@@ -1,4 +1,6 @@
 ActiveAdmin.register Habit do
+
+ permit_params :habit_name, :user_id, :actively_tracking
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
