@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "habits#index"
   # Routes for the Completion resource:
 
   # CREATE
