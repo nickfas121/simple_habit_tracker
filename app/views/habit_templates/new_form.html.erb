@@ -1,0 +1,56 @@
+<h1>
+  Add a new habit
+</h1>
+
+
+<hr>
+
+<!-- Form habit start -->
+<form action="/create_habit" method="post">
+<!-- Form habit end -->
+
+  <!-- Label and input for habit_name start -->
+  <div class="form-group">
+    <label for="habit_name">
+      Habit name
+    </label>
+
+    <!-- Input for habit_name start -->
+    <input type="text" id="habit_name" name="habit_name" class="form-control">
+    <!-- Input for habit_name end -->
+  </div>
+  <!-- Label and input for habit_name end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for actively_tracking start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="actively_tracking">
+    <!-- Input for actively_tracking start -->
+    <input id="actively_tracking" class="form-check-input" name="actively_tracking" type="checkbox">
+    <!-- Input for actively_tracking end -->
+    <label for="actively_tracking" class="form-check-label">
+      Actively tracking
+    </label>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create habit
+  </button>
+</form>
+
+<hr>
+
+<a href="/habits">
+  Go back
+</a>

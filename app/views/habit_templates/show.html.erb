@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Habit #<%= @habit.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/habits" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link habit start -->
+      <div class="col">
+        <a href="/habits/<%= @habit.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit habit
+        </a>
+      </div>
+      <!-- Edit link habit end -->
+
+      <!-- Delete link habit start -->
+      <div class="col">
+        <a href="/delete_habit/<%= @habit.id %>" class="btn btn-block btn-outline-secondary">
+          Delete habit
+        </a>
+      </div>
+      <!-- Delete link habit end -->
+    </div>
+
+    <dl>
+      <dt>
+        Habit name
+      </dt>
+      <!-- Display habit_name start -->
+      <dd>
+        <%= @habit.habit_name %>
+      </dd>
+      <!-- Display habit_name end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @habit.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Actively tracking
+      </dt>
+      <!-- Display actively_tracking start -->
+      <dd>
+        <%= @habit.actively_tracking %>
+      </dd>
+      <!-- Display actively_tracking end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@habit.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@habit.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
