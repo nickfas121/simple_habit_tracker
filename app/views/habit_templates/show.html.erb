@@ -47,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @habit.user_id %>
+        <% if @habit.user.present? %>
+          <a href="/users/<%= @habit.user_id %>">
+            <%= @habit.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

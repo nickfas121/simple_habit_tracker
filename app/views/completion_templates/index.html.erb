@@ -58,13 +58,21 @@
 
         <!-- Display completion.habit_id start -->
         <td>
-          <%= completion.habit.habit_name %>
+          <% if completion.habit.present? %>
+            <a href="/habits/<%= completion.habit.id %>">
+              <%= completion.habit.habit_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display completion.habit_id end -->
 
         <!-- Display completion.user_id start -->
         <td>
-          <%= completion.user.created_at %>
+          <% if completion.user.present? %>
+            <a href="/users/<%= completion.user.id %>">
+              <%= completion.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display completion.user_id end -->
 

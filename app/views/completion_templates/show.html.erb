@@ -34,7 +34,11 @@
       </dt>
       <!-- Display habit_id start -->
       <dd>
-        <%= @completion.habit_id %>
+        <% if @completion.habit.present? %>
+          <a href="/habits/<%= @completion.habit_id %>">
+            <%= @completion.habit.habit_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display habit_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @completion.user_id %>
+        <% if @completion.user.present? %>
+          <a href="/users/<%= @completion.user_id %>">
+            <%= @completion.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

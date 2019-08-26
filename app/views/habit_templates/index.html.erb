@@ -68,7 +68,11 @@
 
         <!-- Display habit.user_id start -->
         <td>
-          <%= habit.user.created_at %>
+          <% if habit.user.present? %>
+            <a href="/users/<%= habit.user.id %>">
+              <%= habit.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display habit.user_id end -->
 
