@@ -1,6 +1,7 @@
 class CompletionsController < ApplicationController
   def index
-    @completions = Completion.page(params[:page]).per(10)
+    @q = Completion.ransack(params[:q])
+    @completions = @q.result(:distinct => true).includes(:user, :habit).page(params[:page]).per(10)
 
     render("completion_templates/index.html.erb")
   end
